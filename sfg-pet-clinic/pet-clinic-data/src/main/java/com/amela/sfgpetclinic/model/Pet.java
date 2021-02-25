@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Pet {
+public class Pet extends BaseEntity{
 
     private PetType petType;
 
