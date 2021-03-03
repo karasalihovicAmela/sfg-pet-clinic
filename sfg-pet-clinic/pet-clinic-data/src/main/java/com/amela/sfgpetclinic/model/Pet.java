@@ -11,6 +11,8 @@ import java.time.LocalDate;
 @ToString
 public class Pet extends BaseEntity{
 
+    private String name;
+
     private PetType petType;
 
     private Owner owner;

@@ -1,4 +1,4 @@
-package com.amela.sfgpetclinic.map;
+package com.amela.sfgpetclinic.services.map;
 
 import com.amela.sfgpetclinic.model.BaseEntity;
 
