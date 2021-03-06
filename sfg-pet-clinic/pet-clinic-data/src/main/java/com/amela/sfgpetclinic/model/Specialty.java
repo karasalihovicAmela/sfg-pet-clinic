@@ -10,10 +10,10 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Entity
-@Table(name = "types")
-public class PetType extends BaseEntity{
+@Table(name = "specialties")
+public class Specialty extends BaseEntity {
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "description")
+    private String description;
 
 }

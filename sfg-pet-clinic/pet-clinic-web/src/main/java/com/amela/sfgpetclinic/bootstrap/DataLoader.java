@@ -1,10 +1,7 @@
 package com.amela.sfgpetclinic.bootstrap;
 
 import com.amela.sfgpetclinic.model.*;
-import com.amela.sfgpetclinic.services.OwnerService;
-import com.amela.sfgpetclinic.services.PetTypeService;
-import com.amela.sfgpetclinic.services.SpecialtyService;
-import com.amela.sfgpetclinic.services.VetService;
+import com.amela.sfgpetclinic.services.*;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -19,6 +16,7 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialityService;
+    private final VisitService visitService;
 
 
     @Override
@@ -82,6 +80,13 @@ public class DataLoader implements CommandLineRunner {
         owner2.getPets().add(fionasCat);
 
         ownerService.save(owner2);
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(fionasCat);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneezy Kitty");
+
+        visitService.save(catVisit);
 
         System.out.println("Loaded Owners....");
 
