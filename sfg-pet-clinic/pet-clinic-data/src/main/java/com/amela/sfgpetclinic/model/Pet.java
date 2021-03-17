@@ -1,7 +1,6 @@
 package com.amela.sfgpetclinic.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -10,6 +9,9 @@ import java.util.Set;
 
 @Setter
 @Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
 @Table(name = "pets")
 public class Pet extends BaseEntity{
