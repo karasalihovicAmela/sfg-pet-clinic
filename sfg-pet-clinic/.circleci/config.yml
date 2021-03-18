@@ -7,3 +7,4 @@ workflows:
   maven_test:
     jobs:
       - maven/test
+      - mvn -f sfg-pet-clinic/pom.xml <goals> ...
