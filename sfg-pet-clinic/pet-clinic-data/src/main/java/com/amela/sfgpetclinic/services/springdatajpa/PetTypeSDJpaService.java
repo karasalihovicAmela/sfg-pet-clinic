@@ -3,7 +3,6 @@ package com.amela.sfgpetclinic.services.springdatajpa;
 import com.amela.sfgpetclinic.model.PetType;
 import com.amela.sfgpetclinic.repositories.PetTypeRepository;
 import com.amela.sfgpetclinic.services.PetTypeService;
-import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +11,13 @@ import java.util.Set;
 
 @Service
 @Profile("springdatajpa")
-@AllArgsConstructor
 public class PetTypeSDJpaService implements PetTypeService {
 
     private final PetTypeRepository petTypeRepository;
+
+    public PetTypeSDJpaService(PetTypeRepository petTypeRepository) {
+        this.petTypeRepository = petTypeRepository;
+    }
 
     @Override
     public Set<PetType> findAll() {

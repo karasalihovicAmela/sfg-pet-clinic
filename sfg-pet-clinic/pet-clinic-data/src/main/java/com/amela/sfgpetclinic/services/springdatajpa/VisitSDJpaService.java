@@ -3,7 +3,6 @@ package com.amela.sfgpetclinic.services.springdatajpa;
 import com.amela.sfgpetclinic.model.Visit;
 import com.amela.sfgpetclinic.repositories.VisitRepository;
 import com.amela.sfgpetclinic.services.VisitService;
-import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +11,13 @@ import java.util.Set;
 
 @Service
 @Profile("springdatajpa")
-@AllArgsConstructor
 public class VisitSDJpaService implements VisitService {
 
     private final VisitRepository visitRepository;
+
+    public VisitSDJpaService(VisitRepository visitRepository) {
+        this.visitRepository = visitRepository;
+    }
 
     @Override
     public Set<Visit> findAll() {

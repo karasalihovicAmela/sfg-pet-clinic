@@ -3,7 +3,6 @@ package com.amela.sfgpetclinic.services.springdatajpa;
 import com.amela.sfgpetclinic.model.Vet;
 import com.amela.sfgpetclinic.repositories.VetRepostory;
 import com.amela.sfgpetclinic.services.VetService;
-import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +11,13 @@ import java.util.Set;
 
 @Service
 @Profile("springdatajpa")
-@AllArgsConstructor
 public class VetSDJpaService implements VetService {
 
     private final VetRepostory vetRepostory;
+
+    public VetSDJpaService(VetRepostory vetRepostory) {
+        this.vetRepostory = vetRepostory;
+    }
 
     @Override
     public Set<Vet> findAll() {

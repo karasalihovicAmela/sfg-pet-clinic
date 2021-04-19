@@ -5,7 +5,6 @@ import com.amela.sfgpetclinic.repositories.OwnerRepository;
 import com.amela.sfgpetclinic.repositories.PetRepository;
 import com.amela.sfgpetclinic.repositories.PetTypeRepository;
 import com.amela.sfgpetclinic.services.OwnerService;
-import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +13,6 @@ import java.util.List;
 import java.util.Set;
 
 @Service
-@AllArgsConstructor
 @Profile("springdatajpa")
 public class OwnerSDJpaService implements OwnerService {
 
@@ -23,6 +21,12 @@ public class OwnerSDJpaService implements OwnerService {
     private final PetRepository petRepository;
 
     private final PetTypeRepository petTypeRepository;
+
+    public OwnerSDJpaService(OwnerRepository ownerRepository, PetRepository petRepository, PetTypeRepository petTypeRepository) {
+        this.ownerRepository = ownerRepository;
+        this.petRepository = petRepository;
+        this.petTypeRepository = petTypeRepository;
+    }
 
     @Override
     public Owner findByLastName(String lastName) {
